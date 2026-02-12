@@ -48,7 +48,7 @@ public class ExceptionHandlingMiddleware
 
         switch (exception)
         {
-            case ValidationException validationException:
+            case FluentValidation.ValidationException validationException:
                 response.StatusCode = (int)HttpStatusCode.BadRequest;
                 errorResponse.Errors = validationException.Errors
                     .Select(e => e.ErrorMessage)
